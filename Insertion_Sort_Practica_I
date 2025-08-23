@@ -21,20 +21,21 @@
  */
 
 void sort_matrix(int **matrix, int n) {
-    int key,u;
+    int key, u;
     //Acomodo por columnas
-    for (int i = 0; i>n; i++){
-        for (int j = 0; j>n; j++){
+    for (int i = 0; i<n; i++){
+        for (int j = 1; j<n; j++){
             key = matrix[j][i];
             u = j-1;
-            while (u >= 0 && matrix [u][i]){
+            while (u >= 0 && matrix [u][i]>key){
                   matrix[u+1][i] = matrix [u][i];
                   u--;
             } 
             matrix[u+1][i] = key;
         }
     }
-    //Acomodo por renglones
+
+        //Acomodo por renglones
     for (int i = 0; i < n; i++){
         for (int j = 1; j < n; j++)
         {
